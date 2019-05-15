@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>stack-a-blocks</title>
+    <style>
+        body {
+            background: #292935;
+            color: #fff;
+            font-family: sans-serif;
+            font-size: 2em;
+            margin: 50px;
+        }
+
+        canvas {
+            border: solid 3px #ccc;
+            border-radius: 3px;
+            height: 85vh;
+            display: inline-block;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+
+        #score {
+            position: absolute;
+        }
+
+        .arrows {
+            margin-top: 75px;
+            width: 25%;
+        }
+
+        .keys {
+            margin-top: 50px;
+            width: 25%;
+            display: block;
+        }
+
+        @media only screen and (min-width: 830px) {
+            .arrows {
+                clear: both;
+            }
+
+            .keys {
+                clear: both;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="stack-a-blocks" width="240" height="400"></canvas>
+    
+    <div class="gameInfo">
+        Score:<div id="score"></div>
+    </div>
+
+    <img class="arrows" src="images/arrows.png" alt="image instructions">
+    <img class="keys" src="images/w_d_keys.png" alt="image instructions">
+    <script src="assets/js/stack-a-blocks.js"></script>
+
+    <script>
+        window.addEventListener("keydown", function(e) {
+    // space and arrow keys
+    if([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
+        e.preventDefault();
+    }
+}, false);
+    </script>
+
+
+</body>
+</html>
